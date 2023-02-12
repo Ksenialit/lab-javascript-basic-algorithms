@@ -19,19 +19,36 @@ if (hacker1.length > hacker2.length) {
   }
 
 // Iteration 3: Loops
-const driversName = "John";
-console.log(driversName.toUpperCase().split("").join(" "));
-
-const reverseName = "John";
-console.log(reverseName.split("").reverse().join(""));
-
-
-if (hacker1 < hacker2) {
-  console.log(`The driver's name goes first.`);
-}
-  else if (hacker1 > hacker2) {
-    console.log(`Yo, the navigator goes first definitely.`);
+let capitalName = "";
+for (let i=0; i<hacker1.length; i++){
+  if (i === (hacker1.length - 1)) {
+    capitalName += hacker1[i].toUpperCase()
   }
   else {
-   console.log(`What?! You both have the same name?`);
+  capitalName += hacker1[i].toUpperCase() + " ";
   }
+}
+console.log(capitalName)
+
+let reverseName = "";
+for (let i=hacker1.length -1; i>=0; i--){
+  console.log(i)
+  reverseName += hacker1[i];
+}
+ console.log(reverseName)
+
+if (hacker1 === hacker2) {
+  console.log(`What?! You both have the same name?`);
+}
+else {
+for (let i=0; i<hacker1.length || i<hacker2.length; i++) {
+  if (hacker1[i] < hacker2[i]) {
+    console.log(`The driver's name goes first.`);
+    break;
+  }
+  else if (hacker1[i] > hacker2[i]) {
+    console.log(`Yo, the navigator goes first definitely.`);
+    break;
+  }
+}
+}
